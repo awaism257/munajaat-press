@@ -1,6 +1,6 @@
 # munajaatpress.com
 
-The website of Munajaat Press: plain HTML and CSS, no build step, no cookies, no tracking.
+The website of Munajaat Press: plain HTML and CSS, no build step, no cookies, no tracking. Visitor counts come from Cloudflare Web Analytics (cookie-free), switched on in the Pages project under Metrics, which adds the beacon automatically at deploy.
 Hosted on Cloudflare Pages from this repository's `main` branch.
 
 - `index.html` – home page with all the books

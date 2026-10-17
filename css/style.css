@@ -1,0 +1,114 @@
+/* Munajaat Press — munajaatpress.com
+   Self-hosted fonts only; no external requests, cookies or tracking. */
+
+@font-face { font-family: "Noto Serif"; src: url("../fonts/NotoSerif-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Noto Serif"; src: url("../fonts/NotoSerif-Italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "Noto Serif"; src: url("../fonts/NotoSerif-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+/* Only the ﷺ ligature, so it renders correctly in English text */
+@font-face { font-family: "Honorific"; src: url("../fonts/Amiri-Honorific.woff2") format("woff2"); unicode-range: U+FDFA; font-display: swap; }
+
+:root {
+  --bg: #062016;
+  --bg-2: #0b2a1d;
+  --card: #10301f;
+  --line: rgba(214, 174, 94, 0.28);
+  --gold: #d6ae5e;
+  --gold-light: #f0d48c;
+  --cream: #f0ebdc;
+  --muted: rgba(240, 235, 220, 0.72);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --radius: 14px;
+  --max: 1080px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 50% -10%, #12402b 0%, var(--bg) 55%) fixed, var(--bg);
+  color: var(--cream);
+  font-family: "Honorific", "Noto Serif", Georgia, serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+a { color: var(--gold); }
+a:hover { color: var(--gold-light); }
+img { max-width: 100%; height: auto; display: block; }
+.wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+.skip { position: absolute; left: -9999px; }
+.skip:focus { left: 16px; top: 16px; background: var(--cream); color: var(--bg); padding: 8px 12px; z-index: 10; }
+
+/* Header */
+.site-header { border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
+.brand img { width: 220px; }
+.nav { display: flex; gap: 22px; flex-wrap: wrap; }
+.nav a { color: var(--cream); text-decoration: none; font-size: 0.95rem; }
+.nav a:hover { color: var(--gold); }
+
+/* Hero */
+.hero { text-align: center; padding: 64px 0 40px; }
+.hero img { width: min(420px, 80%); margin: 0 auto 26px; }
+.hero h1 { font-size: clamp(1.5rem, 3.4vw, 2.2rem); line-height: 1.3; margin: 0 auto 14px; max-width: 760px; font-weight: 700; }
+.hero p { color: var(--muted); max-width: 680px; margin: 0 auto 26px; }
+.divider { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--gold); margin: 6px 0 22px; }
+.divider::before, .divider::after { content: ""; width: 80px; height: 1px; background: var(--gold); opacity: 0.7; }
+
+/* Buttons */
+.btn { display: inline-block; padding: 10px 22px; border-radius: 999px; background: var(--gold); color: #10241a; text-decoration: none; font-weight: 700; font-size: 0.95rem; border: 1.5px solid var(--gold); }
+.btn:hover { background: var(--gold-light); color: #10241a; border-color: var(--gold-light); }
+.btn.ghost { background: transparent; color: var(--gold); }
+.btn.ghost:hover { background: rgba(214, 174, 94, 0.12); color: var(--gold-light); }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.hero .btn-row { justify-content: center; }
+
+/* Sections */
+section { padding: 44px 0; }
+.section-title { text-align: center; margin-bottom: 30px; }
+.section-title .eyebrow { color: var(--gold); letter-spacing: 0.18em; font-size: 0.8rem; text-transform: uppercase; font-weight: 700; }
+.section-title h2 { margin: 6px 0 0; font-size: clamp(1.4rem, 2.8vw, 1.9rem); }
+.section-title p { color: var(--muted); margin: 8px auto 0; max-width: 640px; }
+
+/* Book cards */
+.books { display: grid; gap: 26px; }
+.book { display: grid; grid-template-columns: 210px 1fr; gap: 28px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); scroll-margin-top: 20px; }
+.book .cover img { border-radius: 6px; box-shadow: 0 8px 22px rgba(0, 0, 0, 0.5); }
+.book h3 { margin: 0; font-size: 1.35rem; line-height: 1.3; }
+.book .sub { color: var(--gold); font-style: italic; margin: 4px 0 12px; }
+.book p { margin: 0 0 12px; }
+.book .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 16px; }
+.book ul { margin: 0 0 14px; padding-left: 1.2em; }
+.book li { margin-bottom: 4px; }
+.review { display: flex; gap: 14px; align-items: center; background: rgba(0, 0, 0, 0.18); border-left: 3px solid var(--gold); border-radius: 8px; padding: 12px 14px; margin: 4px 0 16px; }
+.review img { width: 60px; flex: 0 0 60px; }
+.review blockquote { margin: 0; font-style: italic; }
+.review cite { display: block; font-style: normal; color: var(--muted); font-size: 0.88rem; margin-top: 4px; }
+.sample { margin-top: 14px; font-size: 0.95rem; }
+.badge { display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #10241a; background: var(--gold); border-radius: 6px; padding: 2px 8px; margin-bottom: 8px; }
+.book.soon { opacity: 0.85; }
+
+/* Apps */
+.apps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.app { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; }
+.app h3 { margin: 0 0 6px; font-size: 1.1rem; }
+.app p { color: var(--muted); font-size: 0.93rem; margin: 0 0 12px; }
+
+/* About / contact */
+.prose { max-width: 760px; margin: 0 auto; }
+.prose p { margin: 0 0 14px; }
+.contact-box { text-align: center; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; max-width: 640px; margin: 0 auto; }
+.contact-box a.email { font-size: 1.2rem; font-weight: 700; }
+
+/* Footer */
+.site-footer { border-top: 1px solid var(--line); margin-top: 30px; padding: 26px 0 40px; color: var(--muted); font-size: 0.88rem; text-align: center; }
+.site-footer img { width: 160px; margin: 0 auto 12px; opacity: 0.9; }
+.site-footer p { margin: 4px 0; }
+
+@media (max-width: 760px) {
+  .site-header .wrap { flex-direction: column; }
+  .brand img { width: 190px; }
+  .nav { justify-content: center; gap: 16px; }
+  .book { grid-template-columns: 1fr; padding: 20px; }
+  .book .cover { max-width: 220px; margin: 0 auto; }
+  .apps { grid-template-columns: 1fr; }
+}

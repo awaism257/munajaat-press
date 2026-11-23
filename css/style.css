@@ -99,6 +99,18 @@ section { padding: 44px 0; }
 .contact-box { text-align: center; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; max-width: 640px; margin: 0 auto; }
 .contact-box a.email { font-size: 1.2rem; font-weight: 700; }
 
+/* Early readers */
+.early-box { max-width: 720px; }
+.early-form { display: grid; gap: 14px; text-align: left; margin-top: 18px; }
+.early-form label { display: grid; gap: 6px; font-weight: 700; font-size: 0.95rem; }
+.early-form input[type=text], .early-form select { font: inherit; font-weight: 400; padding: 10px 12px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--cream); }
+.early-form fieldset { border: 1px solid var(--line); border-radius: 10px; padding: 10px 14px 12px; margin: 0; display: grid; gap: 6px; }
+.early-form legend { font-weight: 700; font-size: 0.95rem; padding: 0 6px; }
+.early-form label.check { display: flex; gap: 10px; align-items: center; font-weight: 400; }
+.early-form input[type=checkbox] { accent-color: var(--gold); width: 18px; height: 18px; }
+.early-form .btn { justify-self: center; cursor: pointer; font-family: inherit; }
+.form-note { color: var(--muted); font-size: 0.85rem; text-align: center; margin: 0; }
+
 /* Footer */
 .site-footer { border-top: 1px solid var(--line); margin-top: 30px; padding: 26px 0 40px; color: var(--muted); font-size: 0.88rem; text-align: center; }
 .site-footer img { width: 160px; margin: 0 auto 12px; opacity: 0.9; }

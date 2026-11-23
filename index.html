@@ -28,6 +28,7 @@
         <a href="#manga">Manga</a>
         <a href="#children">For children</a>
         <a href="#apps">Free apps</a>
+        <a href="#early-readers">Early readers</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -281,6 +282,42 @@
       </div>
     </section>
 
+    <section id="early-readers">
+      <div class="wrap">
+        <div class="contact-box early-box">
+          <div class="section-title" style="margin-bottom:14px">
+            <div class="eyebrow">Early readers</div>
+            <h2>Read our new books before anyone else</h2>
+          </div>
+          <p>Join our early readers and we’ll send you a free digital copy of each new book a few weeks before it comes out, starting with <em>The Salahuddin Chronicles</em>, new volumes of <em>The Shield of Al-Aqsa</em> and our books for little ones. In return, we’d love an honest review on Amazon or Goodreads when it’s published. Reviewing is always your choice, and we never ask for a good review, only an honest one.</p>
+          <form class="early-form" id="early-form" action="mailto:info@munajaatpress.com" method="get">
+            <label>Your first name
+              <input type="text" id="er-name" autocomplete="given-name" required>
+            </label>
+            <label>Which Amazon do you use?
+              <select id="er-store">
+                <option>Amazon UK</option>
+                <option>Amazon US</option>
+                <option>Amazon Canada</option>
+                <option>Amazon Australia</option>
+                <option>Another Amazon store</option>
+                <option>I don't use Amazon (Goodreads only)</option>
+              </select>
+            </label>
+            <fieldset>
+              <legend>What would you like to read?</legend>
+              <label class="check"><input type="checkbox" value="The Salahuddin Chronicles (novel)" checked> The Salahuddin Chronicles (novel)</label>
+              <label class="check"><input type="checkbox" value="The Shield of Al-Aqsa (manga)" checked> The Shield of Al-Aqsa (manga)</label>
+              <label class="check"><input type="checkbox" value="Classical history and Seerah"> Classical history and Seerah</label>
+              <label class="check"><input type="checkbox" value="Children's books"> Children’s books</label>
+            </fieldset>
+            <button class="btn" type="submit">Sign me up by email</button>
+            <p class="form-note">This opens your email app with a short message to us. Just press send. We use your email address only to send you early copies and news of new books, never share it, and you can leave at any time by replying “stop”.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <section id="about">
       <div class="wrap">
         <div class="section-title">
@@ -316,5 +353,17 @@
       <p>As an independent publisher we earn royalties when you buy our books on Amazon.</p>
     </div>
   </footer>
+  <script>
+  document.getElementById('early-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('er-name').value.trim();
+    var store = document.getElementById('er-store').value;
+    var picks = Array.prototype.map.call(this.querySelectorAll('input[type=checkbox]:checked'), function (c) { return c.value; });
+    var body = 'Assalamu alaykum,\n\nPlease add me to the Munajaat Press early readers.\n\nName: ' + name +
+      '\nAmazon store: ' + store + '\nInterested in: ' + (picks.length ? picks.join(', ') : 'Any new book') +
+      '\n\nJazakAllahu khayran';
+    window.location.href = 'mailto:info@munajaatpress.com?subject=' + encodeURIComponent('Early reader sign-up') + '&body=' + encodeURIComponent(body);
+  });
+  </script>
 </body>
 </html>
